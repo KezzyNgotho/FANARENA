@@ -1,0 +1,673 @@
+/* index.css */
+
+/* Custom Color Variables */
+:root {
+    --vibrant-orange: #FF6F00;
+    --electric-blue: #007BFF;
+    --bright-white: #FFFFFF;
+    --sky-blue: #76D7EA;
+    --jet-black: #2C2C2C;
+    --neon-green: #00FF7F;
+    --vibrant-red: #FF3B30;
+    --light-gray: #f0f0f0;
+    --card-shadow: rgba(0, 0, 0, 0.2); 
+    --header-bg: var(--bright-white); 
+  --header-shadow: rgba(0, 0, 0, 0.1); 
+  --nav-link-color: var(--jet-black);
+  --nav-link-hover: var(--electric-blue);
+  }
+
+  /* Header Styles */
+  .header {
+    background-color: var(--header-bg);
+    box-shadow: 0 2px 4px var(--header-shadow);
+    padding: 10px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+.header-left {
+  display: flex;
+  align-items: center;
+}
+
+
+.logo-img {
+  width: 50px; /* Increased for better visibility */
+  height: 50px;
+  border: 2px solid var(--electric-blue);
+  border-radius: 50%;
+  margin-right: 15px;
+  transition: transform 0.3s ease;
+}
+
+.logo-img:hover {
+  transform: scale(1.05);
+}
+
+.logo-text h1 {
+  font-size: 1.8rem;
+  color: var(--jet-black);
+  margin: 0;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.logo-text h1:hover {
+  color: var(--electric-blue);
+}
+
+.header-nav {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 25px;
+}
+
+.nav-link {
+  color: var(--nav-link-color);
+  text-decoration: none;
+  font-size: 1.1rem;
+  padding: 8px 12px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-link:hover {
+  background-color: var(--electric-blue);
+  color: var(--bright-white);
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+}
+
+.profile-img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: 2px solid var(--vibrant-orange);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.profile-img:hover {
+  transform: scale(1.05);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .logo-img{
+    display: none; /* Hide nav links on smaller screens */
+  }
+
+  .header-left {
+    justify-content: space-between;
+    width: 100%;
+  }
+}
+
+@media (min-width: 769px) {
+  .header-nav {
+    display: flex; /* Show nav links on larger screens */
+  }
+}
+
+  
+  /* Base styles */
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--jet-black);
+    color: var(--jet-black);
+  }
+  
+  /* General Reusable Classes */
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+  }
+  
+  .flex {
+    display: flex;
+  }
+  
+  .justify-center {
+    justify-content: center;
+  }
+  
+  .align-center {
+    align-items: center;
+  }
+  
+  .text-center {
+    text-align: center;
+  }
+  
+  /* Custom Button Styles */
+  .button {
+    padding: 12px 25px;
+    font-size: 16px;
+    background-color: var(--vibrant-orange);
+    color: var(--bright-white);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s, background-color 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+  }
+  .button:hover {
+    transform: scale(1.05);
+    background-color: var(--electric-blue);
+  }
+  
+  /* Heading Styles */
+h1, h2, h3 {
+  color: var(--electric-blue);
+}
+
+h1 {
+  font-size: 2.5rem;
+  color: var(--vibrant-orange);
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+  
+  /* Form Styles */
+  .form-input {
+    padding: 10px;
+    border: 1px solid var(--jet-black);
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  /* Card Styles */
+  .card {
+    border: 1px solid var(--jet-black);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: var(--sky-blue);
+  }
+  
+/* Hero Section Styles */
+.hero-section {
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--bright-white);
+  text-align: center;
+  position: relative;
+}
+
+.hero-content {
+  background-color: rgba(0, 0, 0, 0.6); 
+  padding: 20px;
+  border-radius: 10px;
+  z-index: 2; 
+}
+
+.hero-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); 
+  z-index: 1; 
+}
+
+.hero-section h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.hero-section p {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+
+/* Grid Section Styles */
+.grid-section {
+  padding: 2rem 0;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 30px; /* Increased gap for better spacing */
+  justify-content: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.grid-item {
+  background-color: var(--bright-white);
+  padding: 20px;
+  border-radius: 12px; /* Increased border-radius for a smoother look */
+  box-shadow: 0 4px 12px var(--card-shadow);
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.grid-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px var(--card-shadow);
+}
+
+.grid-image {
+  width: 100%;
+  height: 180px; /* Adjusted height for consistency */
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.grid-item h3 {
+  margin: 10px 0;
+  font-size: 1.5rem;
+  color: var(--electric-blue);
+}
+
+.grid-item p {
+  font-size: 1rem;
+  color: var(--jet-black);
+}
+/* Center the entire login page content */
+.login-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full viewport height */
+  background-image: url('/src/assets/stadium5.jpeg'); /* Sports-themed background */
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+/* Center text */
+.text-center {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Add dark overlay over the background */
+.login-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Dark overlay for contrast */
+  z-index: 0;
+}
+
+.login-container h1 {
+  font-size: 3rem;
+  color: var(--neon-green); /* Neon green for a futuristic effect */
+  z-index: 1;
+}
+
+
+/* Flexbox for login buttons */
+.login-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+}
+
+/* Button styles with neon and animation */
+.button {
+  padding: 6px 15px;
+  font-size: 8px;
+  background-color: var(--vibrant-orange);
+  color: var(--bright-white);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.3s, background-color 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.button:hover {
+  transform: scale(1.05);
+  background-color: var(--electric-blue);
+}
+
+/* Special Back Button styling */
+.back-button {
+  background-color: var(--jet-black); /* Jet black for the back button */
+}
+
+.back-button:hover {
+  background-color: var(--neon-green); /* Neon green hover */
+}
+
+/* Ensure text is centered */
+.text-center {
+  color: var(--bright-white); /* Bright white for clear readability */
+  z-index: 1;
+}
+
+/* Glow effect around buttons */
+.button:focus {
+  outline: none;
+  box-shadow: 0 0 10px var(--electric-blue), 0 0 40px var(--neon-green); /* Neon glow effect */
+}
+* Additional Styles for Better Visual Hierarchy */
+h1 {
+  font-size: 2.5rem;
+  color: var(--electric-blue);
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.mt-6 {
+  margin-top: 2rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .grid-container {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 20px;
+  }
+
+  .grid-item {
+    padding: 15px;
+  }
+
+  .grid-image {
+    height: 150px;
+  }
+
+  /* Spectate Event Styles */
+.grid-item img {
+  border-radius: 8px;
+}
+
+  h1 {
+    font-size: 2rem;
+  }
+  .nav-links {
+    gap: 15px;
+  }
+
+  .nav-link {
+    font-size: 1rem;
+    padding: 6px 10px;
+  }
+}
+
+/* Modal Overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(44, 44, 44, 0.8); /* Semi-transparent dark overlay */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000; /* Above other elements */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: var(--bright-white);
+  padding: 30px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 8px 16px var(--card-shadow);
+  position: relative;
+}
+
+/* Form Group */
+.form-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: var(--jet-black);
+}
+
+.form-input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--jet-black);
+  border-radius: 5px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+/* Select Input */
+.form-input[type="select"] {
+  height: 40px;
+}
+
+/* Modal Header */
+.modal-content h2 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  color: var(--electric-blue);
+  text-align: center;
+}
+
+/* Additional Button Styling for Modals */
+.back-button {
+  background-color: var(--jet-black);
+}
+
+.back-button:hover {
+  background-color: var(--neon-green);
+}
+/* Players List */
+.players-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Player Card */
+.player-card {
+  background-color: var(--sky-blue);
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px var(--card-shadow);
+}
+
+/* Additional Button Spacing */
+.ml-3 {
+  margin-left: 0.75rem;
+}
+
+/* Responsive Modal */
+@media (max-width: 768px) {
+  .modal-content {
+    padding: 20px;
+  }
+}
+/* Progress Bar Styles */
+.progress-bar {
+  width: 100%;
+  background-color: #e0e0e0;
+  border-radius: 10px;
+  overflow: hidden;
+  height: 20px;
+  margin: 10px 0;
+}
+
+.progress-fill {
+  height: 100%;
+  background-color: var(--electric-blue);
+  width: 0%;
+  transition: width 0.5s ease-in-out;
+}
+
+/* Token Balance Styles */
+.token-balance {
+  font-size: 2rem;
+  color: var(--electric-blue);
+  margin: 10px 0;
+}
+
+
+/* Transaction History Styles */
+.transaction-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+.transaction-table th, .transaction-table td {
+  border: 1px solid var(--jet-black);
+  padding: 10px;
+  text-align: center;
+}
+
+.transaction-table th {
+  background-color: var(--electric-blue);
+  color: var(--bright-white);
+}
+
+.transaction-table .earned {
+  color: var(--neon-green);
+  font-weight: bold;
+}
+
+.transaction-table .spent {
+  color: var(--vibrant-red);
+  font-weight: bold;
+}
+
+/* Spend Actions Styles */
+.spend-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.spend-actions .button {
+  width: 100%;
+}
+
+.cross-sport-page {
+  padding: 20px;
+}
+
+.selection-container {
+  margin-bottom: 20px;
+}
+
+.teams-container ul {
+  list-style-type: none;
+}
+
+.teams-container li {
+  margin-bottom: 10px;
+}
+
+.selected-teams-summary ul {
+  list-style-type: none;
+}
+
+.selected-teams-summary li {
+  margin-bottom: 5px;
+}
+
+.hybrid-events, .esports-integration {
+  margin-top: 40px;
+}
+
+.hybrid-events p, .esports-integration p {
+  font-size: 16px;
+  color: #666;
+}
+
+
+
+.cross-sport-page {
+  background-color: var(--jet-black);
+  color: #fff; /* White text for visibility */
+  padding: 20px;
+}
+
+.selection-container {
+  margin-bottom: 20px;
+}
+
+.selection-container h2, .teams-container h2, .hybrid-events h2, .esports-integration h2, .selected-teams-summary h2 {
+  color: #002aff; /* Accent color for section titles */
+}
+
+select, input[type="checkbox"] {
+  background-color: #ccc; /* Dark background for inputs */
+  color: #fff; /* Light text inside inputs */
+  border: 1px solid #00FFCC; /* Accent border */
+  padding: 5px;
+  margin: 5px 0;
+}
+
+select:focus, input[type="checkbox"]:focus {
+  outline: 2px solid #0048ff; /* Highlight when focused */
+}
+
+.teams-container ul {
+  list-style: none;
+  padding: 0;
+}
+
+.teams-container li {
+  margin: 10px 0;
+}
+
+.teams-container input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+button {
+  background-color: #1100ff; /* Accent button */
+  color: #ccc; /* Dark text */
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+
+
+p {
+  color: #ccc; /* Light gray for body text */
+}
